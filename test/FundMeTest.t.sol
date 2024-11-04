@@ -18,6 +18,12 @@ contract FundMeTest is Test{
   function testOwnerIsMessageSender() public view  {
     assertEq(fundMe.i_owner(), address(this));
   }
+  function testPriceFeedVersionIsAccurate() public view  {
+    uint256 version = fundMe.getVersion();
+    assertEq(version, 4);
+    console.log("jaja");
+  }
+
 }
   
 
